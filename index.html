@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>F1dg3t | Sunset Bar Standard Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="/img/icon.png">
+  <script type="module" src="app.js"></script>
+  <meta content="F1dg3t | SBSCG" property="og:title" />
+  <meta content="Sunset Bar Standard Code Generator" property="og:description" />
+  <meta content="https://f1dg3txd.codeberg.page/tools/SBSCG" property="og:url" />
+  <meta content="https://f1dg3txd.codeberg.page/tools/SBSCG/img/icon.png" property="og:image" />
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:src" content="https://f1dg3txd.codeberg.page/tools/SBSCG/img/icon.png">
+  <meta content="#FFBD00" data-react-helmet="true" name="theme-color" />
+</head>
+<body>
+  <div id="app">
+    <div class="panel">
+      <h1 class="panel-title">Sunset Bar Standard Code Generator</h1>
+      <div class="row">
+        <label>Preset</label>
+        <input id="preset" placeholder="RL-120-Se-F5S0S3E4-0000001-7" style="background:var(--card);color:#fff;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;min-width:240px">
+        <button id="applyPreset" style="padding:8px 10px;border-radius:8px;background:#2f2f2f;color:#fff;border:1px solid rgba(255,255,255,0.04);">Apply</button>
+
+        <label>Drink</label>
+        <select id="shade">
+          <option>LL</option>
+          <option>DL</option>
+          <option>RL</option>
+          <option>B</option>
+        </select>
+        <label>Amount</label>
+        <select id="size"></select>
+        <label>Type</label>
+        <select id="drink">
+          <option>Co</option>
+          <option>So</option>
+          <option>Se</option>
+        </select>
+        <label>Glass</label>
+        <select id="glass"></select>
+      </div>
+
+      <div class="cols">
+        <div class="col">
+          <h3>Colors (R G B W)</h3>
+          <div id="slots"></div>
+        </div>
+
+        <div class="col">
+          <h3>Add-ons (binary section)</h3>
+          <div class="toggles">
+            <label><input type="checkbox" id="ice"> Ice</label>
+            <label><input type="checkbox" id="coffie"> Coffie</label>
+            <label><input type="checkbox" id="milk"> Milk</label>
+            <label><input type="checkbox" id="sugar"> Sugar</label>
+            <label><input type="checkbox" id="coco"> Coco</label>
+            <label><input type="checkbox" id="cream"> Cream</label>
+            <label><input type="checkbox" id="foam"> Foam</label>
+          </div>
+
+          <h3>Preview numbers</h3>
+          <div id="numbers" class="numbers"></div>
+        </div>
+      </div>
+
+      <div class="output-row">
+        <div id="code" class="code"></div>
+        <div id="graphical" class="graphical" aria-hidden="true"></div>
+        <button id="copy">Copy</button>
+      </div>
+
+      <!-- SVG preview and raw SVG markup for copying into Krita -->
+      <div class="output-row" style="margin-top:10px;flex-direction:column;align-items:stretch;gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="small" style="min-width:84px">SVG Preview</div>
+          <div id="svgPreview" style="flex:1;background:#070708;border-radius:8px;padding:8px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center"></div>
+          <button id="copySvg">Copy SVG</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="small" style="min-width:84px">Krita Text SVG</div>
+          <textarea id="svgText" class="svg-textarea" readonly></textarea>
+          <button id="openKrita" style="padding:8px 10px;border-radius:8px;background:#2f2f2f;color:#fff;border:1px solid rgba(255,255,255,0.04);" onclick="window.open('https://krita.org/','_blank')">Krita.org</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
